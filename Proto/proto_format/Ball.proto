@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message Ball {
+	uint64 oid = 1;
+	float x = 2;
+	float y = 3;
+}
+ 
+message BallUpdateEvent {
+	uint32 size = 1;
+	repeated Ball ball = 2;
+}

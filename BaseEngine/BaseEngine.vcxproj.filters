@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{c779af7d-e755-4489-83e4-6ef991e76b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components">
+      <UniqueIdentifier>{6a3b1206-1ae8-451c-95c6-49a2c87b296f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="systems">
+      <UniqueIdentifier>{598b20f2-79f5-4748-a482-fa5a59fcee2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entitys">
+      <UniqueIdentifier>{fc3fa795-006c-4cb2-998e-237b65f4d138}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="systems\SystemManager.cpp">
+      <Filter>systems</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
