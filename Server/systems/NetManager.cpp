@@ -24,10 +24,10 @@ bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
             static std::string _buff;
             _buff.clear();
             if (_buff_it->SerializeToString(&_buff)) {
-            
+                NETINFO->m_pub_socket.send(zmq::buffer(_buff_it->GetTypeName()), zmq::send_flags::sndmore);
+                NETINFO->m_pub_socket.send(zmq::buffer(_buff), zmq::send_flags::none);
             }
-            NETINFO->m_pub_socket.send(zmq::buffer(_buff_it->GetTypeName()), zmq::send_flags::sndmore);
-            NETINFO->m_pub_socket.send(zmq::buffer(_buff), zmq::send_flags::dontwait);
+            
         }
         arr_.clear();
     });

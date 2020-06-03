@@ -1,8 +1,10 @@
-#include "./ProtobufCodec.h"
+#include "ProtobufCodec.h"
 using namespace google::protobuf;
+#include "include/tool/LogInfo.h"
+#include "./include/proto/Ball.pb.h"
 
 
-Message* ProtobufCodec::createMessage(std::string_view proto_name_) {
+Message* ProtobufCodec::createMessage(const std::string& proto_name_) {
     Message* _msg = nullptr;
     if (const Descriptor* _descripotr = DescriptorPool::generated_pool()->FindMessageTypeByName(proto_name_.data())) {
         if (const Message* _prototype = MessageFactory::generated_factory()->GetPrototype(_descripotr)) {
@@ -11,10 +13,10 @@ Message* ProtobufCodec::createMessage(std::string_view proto_name_) {
     }
     return _msg;
 }
-Message* ProtobufCodec::decode(std::string_view proto_name_, std::string_view zmq_msg_) {
+Message* ProtobufCodec::decode(const std::string& proto_name_, const std::string& zmq_msg_) {
     Message* _msg = nullptr;
     if (_msg = createMessage(proto_name_)) {
-        _msg->ParseFromString(zmq_msg_.data());
+        _msg->ParseFromString(zmq_msg_);
     }
     return _msg;
 }

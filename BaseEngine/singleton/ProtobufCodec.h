@@ -13,8 +13,8 @@ using namespace google::protobuf;
 class ProtobufCodec : public Singleton<ProtobufCodec> {
     friend class Singleton<ProtobufCodec>;
 public:
-    Message* createMessage(std::string_view proto_name_);
-    Message* decode(std::string_view proto_name_, std::string_view zmq_msg_);
+    Message* createMessage(const std::string& proto_name_);
+    Message* decode(const std::string& proto_name_, const std::string& zmq_msg_);
 private:
     ProtobufCodec() {};
 };

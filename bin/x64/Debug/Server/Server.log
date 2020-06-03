@@ -1,0 +1,183 @@
+﻿  UniqueNumberFactory.cpp
+  SystemManager.cpp
+  Ball.pb.cc
+  Time.cpp
+  main.cpp
+  SendBuffDispatch.cpp
+  BallCreateManager.cpp
+  MoveManager.cpp
+  NetManager.cpp
+  ProtoBuildManager.cpp
+  正在生成代码...
+libprotobuf.lib(common.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(common.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(coded_stream.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(coded_stream.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(arena.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(arena.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(message_lite.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(message_lite.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(repeated_field.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(repeated_field.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(wire_format_lite.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(wire_format_lite.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(generated_message_util.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(generated_message_util.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(unknown_field_set.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(unknown_field_set.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(generated_message_reflection.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(generated_message_reflection.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(message.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(message.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(reflection_ops.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(reflection_ops.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(wire_format.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(wire_format.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(status.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(status.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(int128.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(int128.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(strutil.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(strutil.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream_impl_lite.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream_impl_lite.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream_impl.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(zero_copy_stream_impl.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(implicit_weak_message.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(implicit_weak_message.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(structurally_valid.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(structurally_valid.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(stringprintf.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(stringprintf.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(extension_set.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(extension_set.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(extension_set_heavy.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(extension_set_heavy.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(map_field.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(map_field.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(strtod.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(strtod.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(io_win32.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(io_win32.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(text_format.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(text_format.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor.pb.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor.pb.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(tokenizer.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(tokenizer.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor_database.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(descriptor_database.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(dynamic_message.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(dynamic_message.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(substitute.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(substitute.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(any_lite.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(any_lite.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(any.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(UniqueNumberFactory.obj 中)
+libprotobuf.lib(any.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MTd_StaticDebug”(UniqueNumberFactory.obj 中)
+libconcrtd.lib(Chores.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(locale.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(wlocale.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(xlocale.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libconcrtd.lib(TaskCollection.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+ProtoBuildManager.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(xonce.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(cout.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(thread0.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+SendBuffDispatch.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+BallCreateManager.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+MoveManager.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+NetManager.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+SystemManager.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+Ball.pb.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+Time.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+main.obj : error LNK2001: 无法解析的外部符号 _CrtDbgReport
+libcpmtd.lib(xlocale.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(cond.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+ProtoBuildManager.obj : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(mutex.obj) : error LNK2001: 无法解析的外部符号 _free_dbg
+Time.obj : error LNK2001: 无法解析的外部符号 _free_dbg
+main.obj : error LNK2001: 无法解析的外部符号 _free_dbg
+BallCreateManager.obj : error LNK2001: 无法解析的外部符号 _free_dbg
+NetManager.obj : error LNK2001: 无法解析的外部符号 _free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+ProtoBuildManager.obj : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: 无法解析的外部符号 _malloc_dbg
+Time.obj : error LNK2001: 无法解析的外部符号 _malloc_dbg
+main.obj : error LNK2001: 无法解析的外部符号 _malloc_dbg
+BallCreateManager.obj : error LNK2001: 无法解析的外部符号 _malloc_dbg
+NetManager.obj : error LNK2001: 无法解析的外部符号 _malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(cond.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+main.obj : error LNK2001: 无法解析的外部符号 _calloc_dbg
+NetManager.obj : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(mutex.obj) : error LNK2001: 无法解析的外部符号 _calloc_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2019: 无法解析的外部符号 _wcsdup_dbg，该符号在函数 _Getctype 中被引用
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: 无法解析的外部符号 _wcsdup_dbg
+libconcrtd.lib(SearchAlgorithms.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(location.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSBackgroundPoller.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSFreeVirtualProcessorRoot.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(FreeVirtualProcessorRoot.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(FreeThreadProxy.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ThreadProxy.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSFreeThreadProxy.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(TaskCollectionBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(WorkQueue.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(Chores.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(VirtualProcessorRoot.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSThreadVirtualProcessor.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSThreadInternalContext.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(TransmogrifiedPrimary.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(Transmogrificator.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ScheduleGroupBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(CacheLocalScheduleGroup.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(FairScheduleGroup.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ExternalContextBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(VirtualProcessor.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SchedulingNode.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SubAllocator.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SchedulingRing.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SchedulerProxy.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(WinRTWrapper.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ThreadProxyFactoryManager.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(InternalContextBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(TaskCollection.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SchedulerPolicyBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ExecutionResource.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(HillClimbing.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(SchedulerBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSWrapper.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(UMSThreadProxy.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ContextBase.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(event.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(Platform.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(utils.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(ResourceManager.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libcpmtd.lib(xmbtowc.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libconcrtd.lib(rtlocks.obj) : error LNK2001: 无法解析的外部符号 _CrtDbgReportW
+libcpmtd.lib(locale.obj) : error LNK2019: 无法解析的外部符号 _realloc_dbg，该符号在函数 "private: static void __cdecl std::locale::_Locimp::_Locimp_Addfac(class std::locale::_Locimp *,class std::locale::facet *,unsigned __int64)" (?_Locimp_Addfac@_Locimp@locale@std@@CAXPEAV123@PEAVfacet@23@_K@Z) 中被引用
+libconcrtd.lib(SubAllocator.obj) : error LNK2019: 无法解析的外部符号 _CrtIsValidHeapPointer，该符号在函数 "private: bool __cdecl Concurrency::details::SubAllocator::InitAndCheckBlockOnAlloc(union Concurrency::details::AllocationEntry *,unsigned __int64)" (?InitAndCheckBlockOnAlloc@SubAllocator@details@Concurrency@@AEAA_NPEATAllocationEntry@23@_K@Z) 中被引用
+..\bin\Serverx64.exe : fatal error LNK1120: 8 个无法解析的外部命令

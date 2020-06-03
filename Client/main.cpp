@@ -48,29 +48,6 @@ void MainLoop() {
 }
 
 int main() {
-
-    zmq::context_t context;
-    zmq::socket_t sock(context, zmq::socket_type::sub);
-    sock.connect("tcp://127.0.0.1:7000");
-    sock.set(zmq::sockopt::subscribe, "");
-    zmq::message_t msg;
-    Timer _tick_timer;
-    while (1) {
-        if (sock.recv(msg, zmq::recv_flags::dontwait)) {
-            _tick_timer.reset();
-            BallUpdateEvent _update_event;
-            _update_event.ParseFromString(msg.to_string());
-            uint32_t _size = _update_event.size();
-            LogInfo << "size: " << _size << FlushLog;
-            for (uint32_t _idx = 0; _idx < _size; _idx++) {
-                const Ball& _ball = _update_event.ball(_idx);
-                //LogInfo << "oid: " << _ball.oid() << " x: " << _ball.x() << " y: " << _ball.y() << FlushLog;
-            }
-            LogError << "frame tick :  " << _tick_timer.elapsed()  << FlushLog;
-        }
-    }
-
-
     SYSMGR->init(ENV->m_registry);
     MainLoop();
     return 0;

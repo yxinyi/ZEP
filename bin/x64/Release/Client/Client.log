@@ -1,12 +1,7 @@
-﻿  ProtobufCodec.cpp
-  ProtobufDispatcher.cpp
-  SystemManager.cpp
-  Ball.pb.cc
-  main.cpp
-  BallCreateManager.cpp
-  NetManager.cpp
+﻿  BallCreateManager.cpp
   正在生成代码
-  Previous IPDB not found, fall back to full compilation.
-  All 1246 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  21 of 1238 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+    20 functions were new in current compilation
+    10 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Client.vcxproj -> F:\zep\ZEP\Client\..\bin\Clientx64.exe

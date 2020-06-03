@@ -22,11 +22,10 @@ bool NetInit(entt::registry& reg_) {
 bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
     zmq::message_t _recv_type_name_msg;
     zmq::message_t _recv_msg;
-    if (NETINFO->m_sub_socket.recv(_recv_type_name_msg, zmq::recv_flags::dontwait)) {
-        std::string_view _msg_name = _recv_type_name_msg.to_string_view();
+    if (NETINFO->m_sub_socket.recv(_recv_type_name_msg, zmq::recv_flags::none)) {
         if (_recv_type_name_msg.more()) {
             if (NETINFO->m_sub_socket.recv(_recv_msg, zmq::recv_flags::dontwait)) {
-                std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv_type_name_msg.to_string(),_recv_msg.to_string_view()));
+                std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv_type_name_msg.to_string(),_recv_msg.to_string()));
                 DispatcherEvent(NETINFO->m_sub_socket, _msg, dt_);
             }
         }
@@ -42,3 +41,4 @@ MgrRegHelper(NetMgr) {
     SYSMGR->regInitSys(NetInit);
     SYSMGR->regSys(SystemLevel::NORMAl, NetUpdate);
 }
+

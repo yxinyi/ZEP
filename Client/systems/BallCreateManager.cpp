@@ -18,8 +18,7 @@ bool BallCreateInit(entt::registry& reg_) {
         uint32_t _size = message_->size();
         for (size_t _idx = 0; _idx < _size; _idx++) {
             const Ball& _ball = message_->ball(static_cast<int>(_idx));
-            LogInfo << _ball.x() << FlushLog;
-            LogInfo << _ball.y() << FlushLog;
+            LogInfo << "Ball oid: " << _ball.oid() << " x: " << _ball.x() << " y: " << _ball.y() << FlushLog;
         }
     });
     return true;
