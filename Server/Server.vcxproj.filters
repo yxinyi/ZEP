@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="entt">
+      <UniqueIdentifier>{7dd3b43c-732c-4563-9566-ff406072fd8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto">
+      <UniqueIdentifier>{60086761-7727-4472-bc7e-9d1b3a05649d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{d07163b2-9884-4cc6-8818-723fdf6f3a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\system">
+      <UniqueIdentifier>{e03bf68e-3a0f-4052-951f-10f05233f749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tool">
+      <UniqueIdentifier>{3151bed2-4cea-4a98-93d3-dddb2a0587f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\component">
+      <UniqueIdentifier>{52fde007-8ef4-4b9d-bd9a-21332fbee468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\entity">
+      <UniqueIdentifier>{d43c0e61-7350-4207-af91-6feb3cef10d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\singleton">
+      <UniqueIdentifier>{95b2c4a0-4358-46b5-8ae9-42b522a66188}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\include\entt.hpp">
+      <Filter>entt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\proto\Ball.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\systems\SystemManager.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\BallCreateManager.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\MoveManager.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\NetManager.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\ProtoBuildManager.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\tool\LogInfo.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\tool\ManagerInitHelper.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\tool\SingletonTemplate.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\tool\Time.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\tool\Timer.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="components\ObjectidComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="components\PositionComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="components\VectorComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="entitys\BallEntity.h">
+      <Filter>src\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\EnvironmentInfo.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\NetInfo.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\UniqueNumberFactory.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton\GameConfigSingle.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton\SendBuffDispatch.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\BallCreateManager.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\MoveManager.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\NetManager.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\ProtoBuildManager.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\include\tool\Time.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BaseEngine\singleton\UniqueNumberFactory.cpp">
+      <Filter>src\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="singleton\SendBuffDispatch.cpp">
+      <Filter>src\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>
