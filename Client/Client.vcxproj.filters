@@ -4,16 +4,58 @@
     <Filter Include="proto">
       <UniqueIdentifier>{0f44ef7f-1161-4b05-8c18-daab7f446bf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{7fc4b258-005f-4c4e-bc8c-d382a61e6a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\systems">
+      <UniqueIdentifier>{dab2636d-8a0d-4119-841e-497d081b246f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\singleton">
+      <UniqueIdentifier>{46e79bfe-8c3e-4361-bf31-6f118a2f9218}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\NetManager.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp">
+      <Filter>src\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\BallCreateManager.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp">
+      <Filter>src\singleton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\include\proto\Ball.pb.h">
       <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\systems\SystemManager.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\NetManager.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton\ClientNetInfo.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\BallCreateManager.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h">
+      <Filter>src\singleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

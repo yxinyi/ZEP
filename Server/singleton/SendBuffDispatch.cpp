@@ -1,7 +1,7 @@
 #pragma once
 #include "SendBuffDispatch.h"
 
-void SendBuffDispatch::pushBuff(std::shared_ptr<std::string> buf_) {
+void SendBuffDispatch::pushBuff(std::shared_ptr<google::protobuf::Message> buf_) {
     m_buffs.push_back(buf_);
 }
 SendBuffDispatch::SendBuffDispatch() {}

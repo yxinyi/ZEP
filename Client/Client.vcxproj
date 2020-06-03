@@ -72,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\</OutDir>
-    <IntDir>..\bin\$(Platform)\$(Configuration)\$(ProjectName)</IntDir>
+    <IntDir>..\bin\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)$(Platform)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\Common\include;..\Common\;..\BaseEngine\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Common\include;..\Common\;..\BaseEngine\;..\Client</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
@@ -149,11 +149,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp" />
+    <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp" />
+    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="systems\BallCreateManager.cpp" />
+    <ClCompile Include="systems\NetManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h" />
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h" />
+    <ClInclude Include="..\BaseEngine\systems\SystemManager.h" />
     <ClInclude Include="..\Common\include\proto\Ball.pb.h" />
+    <ClInclude Include="singleton\ClientNetInfo.h" />
+    <ClInclude Include="systems\BallCreateManager.h" />
+    <ClInclude Include="systems\NetManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
