@@ -1,7 +1,9 @@
-﻿  NetManager.cpp
+﻿  main.cpp
+  NetManager.cpp
+  ProtoBuildManager.cpp
   正在生成代码
-  41 of 1657 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
-    21 functions were new in current compilation
-    40 functions had inline decision re-evaluated but remain unchanged
+  4 of 1675 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Server.vcxproj -> F:\zep\ZEP\Server\..\bin\Serverx64.exe

@@ -95,9 +95,6 @@
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
-    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
     <ClCompile Include="systems\BallCreateManager.cpp">
       <Filter>src\system</Filter>
     </ClCompile>

@@ -3,7 +3,9 @@
 #include "include/entt.hpp"
 #include "include/tool/LogInfo.h"
 #include "include/zmq/cppzmq/zmq_addon.hpp"
-#include "../BaseEngine/systems/SystemManager.h"
+#include "systems/SystemManager.h"
+#include "systems/RenderManager.h"
+#include "systems/InputManager.h"
 #include <windows.h>
 #include <iostream>
 #include "./include/proto/Ball.pb.h"
@@ -34,6 +36,10 @@ void MainLoop() {
                         LogWarn << "frame tick :  " << _tick_timer.elapsed() << "entity size: " << ENV->m_registry.size() << FlushLog;
                     }
                 }
+                //¿Í»§¶ËÍ¼ÐÎäÖÈ¾
+                RenderMgr->loop(ENV->m_registry);
+                InputMgr->loop();
+                
             }
         }
     }

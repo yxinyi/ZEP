@@ -103,7 +103,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Common\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libprotoc.lib;libzmq-v141-mt-4_3_2.lib;libzmq-v141-mt-s-4_3_2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libprotoc.lib;libzmq-v141-mt-4_3_2.lib;libzmq-v141-mt-s-4_3_2.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -151,20 +151,27 @@
   <ItemGroup>
     <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp" />
     <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp" />
-    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="systems\BallCreateManager.cpp" />
+    <ClCompile Include="systems\BallCreateSystem.cpp" />
+    <ClCompile Include="systems\BallRenderSystem.cpp" />
     <ClCompile Include="systems\NetManager.cpp" />
+    <ClCompile Include="systems\WindowSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h" />
     <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h" />
+    <ClInclude Include="..\BaseEngine\systems\InputManager.h" />
+    <ClInclude Include="..\BaseEngine\systems\RenderManager.h" />
     <ClInclude Include="..\BaseEngine\systems\SystemManager.h" />
     <ClInclude Include="..\Common\include\proto\Ball.pb.h" />
+    <ClInclude Include="singleton\BallManager.h" />
     <ClInclude Include="singleton\ClientNetInfo.h" />
-    <ClInclude Include="systems\BallCreateManager.h" />
+    <ClInclude Include="singleton\GameWindow.h" />
+    <ClInclude Include="systems\BallCreateSystem.h" />
+    <ClInclude Include="systems\BallRenderSystem.h" />
     <ClInclude Include="systems\NetManager.h" />
+    <ClInclude Include="systems\WindowSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

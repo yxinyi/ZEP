@@ -178,7 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\BaseEngine\singleton\UniqueNumberFactory.cpp" />
-    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="..\Common\include\tool\Time.cpp" />
     <ClCompile Include="main.cpp" />

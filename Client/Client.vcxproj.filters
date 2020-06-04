@@ -19,20 +19,23 @@
       <Filter>proto</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="..\BaseEngine\systems\SystemManager.cpp">
-      <Filter>src\systems</Filter>
-    </ClCompile>
     <ClCompile Include="systems\NetManager.cpp">
       <Filter>src\systems</Filter>
     </ClCompile>
     <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp">
       <Filter>src\singleton</Filter>
     </ClCompile>
-    <ClCompile Include="systems\BallCreateManager.cpp">
-      <Filter>src\systems</Filter>
-    </ClCompile>
     <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp">
       <Filter>src\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\BallCreateSystem.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\WindowSystem.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\BallRenderSystem.cpp">
+      <Filter>src\systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,10 +54,28 @@
     <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h">
       <Filter>src\singleton</Filter>
     </ClInclude>
-    <ClInclude Include="systems\BallCreateManager.h">
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton\BallManager.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\systems\RenderManager.h">
       <Filter>src\systems</Filter>
     </ClInclude>
-    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h">
+    <ClInclude Include="singleton\GameWindow.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\BallCreateSystem.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\WindowSystem.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\BallRenderSystem.h">
+      <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\systems\InputManager.h">
       <Filter>src\singleton</Filter>
     </ClInclude>
   </ItemGroup>

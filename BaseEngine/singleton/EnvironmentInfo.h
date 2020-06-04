@@ -7,7 +7,7 @@
 
 class EnvironmentInfo  {
 public:
-    const size_t m_frame = 100;
+    const size_t m_frame = 60;
     entt::registry m_registry;
     bool m_open = true;
 };
