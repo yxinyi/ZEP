@@ -66,17 +66,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Ball_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::Ball, oid_),
   PROTOBUF_FIELD_OFFSET(::Ball, x_),
   PROTOBUF_FIELD_OFFSET(::Ball, y_),
+  PROTOBUF_FIELD_OFFSET(::Ball, vector_x_),
+  PROTOBUF_FIELD_OFFSET(::Ball, vector_y_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::BallUpdateEvent, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::BallUpdateEvent, size_),
+  PROTOBUF_FIELD_OFFSET(::BallUpdateEvent, sort_),
   PROTOBUF_FIELD_OFFSET(::BallUpdateEvent, ball_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::Ball)},
-  { 8, -1, sizeof(::BallUpdateEvent)},
+  { 10, -1, sizeof(::BallUpdateEvent)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -85,9 +88,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_Ball_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\nBall.proto\")\n\004Ball\022\013\n\003oid\030\001 \001(\004\022\t\n\001x\030\002"
-  " \001(\002\022\t\n\001y\030\003 \001(\002\"4\n\017BallUpdateEvent\022\014\n\004si"
-  "ze\030\001 \001(\r\022\023\n\004ball\030\002 \003(\0132\005.Ballb\006proto3"
+  "\n\nBall.proto\"M\n\004Ball\022\013\n\003oid\030\001 \001(\004\022\t\n\001x\030\002"
+  " \001(\002\022\t\n\001y\030\003 \001(\002\022\020\n\010vector_x\030\004 \001(\002\022\020\n\010vec"
+  "tor_y\030\005 \001(\002\"B\n\017BallUpdateEvent\022\014\n\004size\030\001"
+  " \001(\r\022\014\n\004sort\030\002 \001(\r\022\023\n\004ball\030\003 \003(\0132\005.Ballb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Ball_2eproto_deps[1] = {
 };
@@ -98,7 +103,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Bal
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Ball_2eproto_once;
 static bool descriptor_table_Ball_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Ball_2eproto = {
-  &descriptor_table_Ball_2eproto_initialized, descriptor_table_protodef_Ball_2eproto, "Ball.proto", 117,
+  &descriptor_table_Ball_2eproto_initialized, descriptor_table_protodef_Ball_2eproto, "Ball.proto", 167,
   &descriptor_table_Ball_2eproto_once, descriptor_table_Ball_2eproto_sccs, descriptor_table_Ball_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_Ball_2eproto::offsets,
   file_level_metadata_Ball_2eproto, 2, file_level_enum_descriptors_Ball_2eproto, file_level_service_descriptors_Ball_2eproto,
@@ -125,15 +130,15 @@ Ball::Ball(const Ball& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&oid_, &from.oid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&y_) -
-    reinterpret_cast<char*>(&oid_)) + sizeof(y_));
+    static_cast<size_t>(reinterpret_cast<char*>(&vector_y_) -
+    reinterpret_cast<char*>(&oid_)) + sizeof(vector_y_));
   // @@protoc_insertion_point(copy_constructor:Ball)
 }
 
 void Ball::SharedCtor() {
   ::memset(&oid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&y_) -
-      reinterpret_cast<char*>(&oid_)) + sizeof(y_));
+      reinterpret_cast<char*>(&vector_y_) -
+      reinterpret_cast<char*>(&oid_)) + sizeof(vector_y_));
 }
 
 Ball::~Ball() {
@@ -160,8 +165,8 @@ void Ball::Clear() {
   (void) cached_has_bits;
 
   ::memset(&oid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&y_) -
-      reinterpret_cast<char*>(&oid_)) + sizeof(y_));
+      reinterpret_cast<char*>(&vector_y_) -
+      reinterpret_cast<char*>(&oid_)) + sizeof(vector_y_));
   _internal_metadata_.Clear();
 }
 
@@ -191,6 +196,20 @@ const char* Ball::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float vector_x = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          vector_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float vector_y = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          vector_y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
@@ -263,6 +282,32 @@ bool Ball::MergePartialFromCodedStream(
         break;
       }
 
+      // float vector_x = 4;
+      case 4: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (37 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vector_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float vector_y = 5;
+      case 5: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (45 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vector_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -305,6 +350,16 @@ void Ball::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(3, this->y(), output);
   }
 
+  // float vector_x = 4;
+  if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(4, this->vector_x(), output);
+  }
+
+  // float vector_y = 5;
+  if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(5, this->vector_y(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -331,6 +386,16 @@ void Ball::SerializeWithCachedSizes(
   // float y = 3;
   if (!(this->y() <= 0 && this->y() >= 0)) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->y(), target);
+  }
+
+  // float vector_x = 4;
+  if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->vector_x(), target);
+  }
+
+  // float vector_y = 5;
+  if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->vector_y(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -371,6 +436,16 @@ size_t Ball::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
+  // float vector_x = 4;
+  if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float vector_y = 5;
+  if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
+    total_size += 1 + 4;
+  }
+
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -407,6 +482,12 @@ void Ball::MergeFrom(const Ball& from) {
   if (!(from.y() <= 0 && from.y() >= 0)) {
     set_y(from.y());
   }
+  if (!(from.vector_x() <= 0 && from.vector_x() >= 0)) {
+    set_vector_x(from.vector_x());
+  }
+  if (!(from.vector_y() <= 0 && from.vector_y() >= 0)) {
+    set_vector_y(from.vector_y());
+  }
 }
 
 void Ball::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -433,6 +514,8 @@ void Ball::InternalSwap(Ball* other) {
   swap(oid_, other->oid_);
   swap(x_, other->x_);
   swap(y_, other->y_);
+  swap(vector_x_, other->vector_x_);
+  swap(vector_y_, other->vector_y_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Ball::GetMetadata() const {
@@ -458,13 +541,17 @@ BallUpdateEvent::BallUpdateEvent(const BallUpdateEvent& from)
       _internal_metadata_(nullptr),
       ball_(from.ball_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  size_ = from.size_;
+  ::memcpy(&size_, &from.size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&sort_) -
+    reinterpret_cast<char*>(&size_)) + sizeof(sort_));
   // @@protoc_insertion_point(copy_constructor:BallUpdateEvent)
 }
 
 void BallUpdateEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BallUpdateEvent_Ball_2eproto.base);
-  size_ = 0u;
+  ::memset(&size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&sort_) -
+      reinterpret_cast<char*>(&size_)) + sizeof(sort_));
 }
 
 BallUpdateEvent::~BallUpdateEvent() {
@@ -491,7 +578,9 @@ void BallUpdateEvent::Clear() {
   (void) cached_has_bits;
 
   ball_.Clear();
-  size_ = 0u;
+  ::memset(&size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&sort_) -
+      reinterpret_cast<char*>(&size_)) + sizeof(sort_));
   _internal_metadata_.Clear();
 }
 
@@ -510,16 +599,23 @@ const char* BallUpdateEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .Ball ball = 2;
+      // uint32 sort = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          sort_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .Ball ball = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(add_ball(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 18);
+          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 26);
         } else goto handle_unusual;
         continue;
       default: {
@@ -565,9 +661,22 @@ bool BallUpdateEvent::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .Ball ball = 2;
+      // uint32 sort = 2;
       case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &sort_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .Ball ball = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
                 input, add_ball()));
         } else {
@@ -608,11 +717,16 @@ void BallUpdateEvent::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(1, this->size(), output);
   }
 
-  // repeated .Ball ball = 2;
+  // uint32 sort = 2;
+  if (this->sort() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(2, this->sort(), output);
+  }
+
+  // repeated .Ball ball = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ball_size()); i < n; i++) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
+      3,
       this->ball(static_cast<int>(i)),
       output);
   }
@@ -635,12 +749,17 @@ void BallUpdateEvent::SerializeWithCachedSizes(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->size(), target);
   }
 
-  // repeated .Ball ball = 2;
+  // uint32 sort = 2;
+  if (this->sort() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->sort(), target);
+  }
+
+  // repeated .Ball ball = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ball_size()); i < n; i++) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->ball(static_cast<int>(i)), target);
+        3, this->ball(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -664,7 +783,7 @@ size_t BallUpdateEvent::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .Ball ball = 2;
+  // repeated .Ball ball = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->ball_size());
     total_size += 1UL * count;
@@ -680,6 +799,13 @@ size_t BallUpdateEvent::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->size());
+  }
+
+  // uint32 sort = 2;
+  if (this->sort() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->sort());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -713,6 +839,9 @@ void BallUpdateEvent::MergeFrom(const BallUpdateEvent& from) {
   if (from.size() != 0) {
     set_size(from.size());
   }
+  if (from.sort() != 0) {
+    set_sort(from.sort());
+  }
 }
 
 void BallUpdateEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -738,6 +867,7 @@ void BallUpdateEvent::InternalSwap(BallUpdateEvent* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&ball_)->InternalSwap(CastToBase(&other->ball_));
   swap(size_, other->size_);
+  swap(sort_, other->sort_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BallUpdateEvent::GetMetadata() const {

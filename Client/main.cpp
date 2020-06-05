@@ -20,6 +20,8 @@ void MainLoop() {
         const float _one_frame_time = 1000.f / static_cast<float>(ENV->m_frame);
         Timer _frame_timer;
         Timer _tick_timer;
+        Timer _second_fps_timer;
+        uint32_t _fps_cnt = 1;
         while (ENV->m_open) {
             const int64_t _this_frame_time = _frame_timer.elapsed();
             if (_this_frame_time >= _one_frame_time) {
@@ -39,7 +41,14 @@ void MainLoop() {
                 //¿Í»§¶ËÍ¼ÐÎäÖÈ¾
                 RenderMgr->loop(ENV->m_registry);
                 InputMgr->loop();
-                
+                if (_second_fps_timer.elapsed() < 1000) {
+                    _fps_cnt ++;
+                }
+                else {
+                    LogInfo << "this second fps is : " << _fps_cnt << FlushLog;
+                    _second_fps_timer.reset();
+                    _fps_cnt = 1;
+                }
             }
         }
     }

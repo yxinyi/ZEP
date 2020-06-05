@@ -183,6 +183,8 @@ class Ball :
     kOidFieldNumber = 1,
     kXFieldNumber = 2,
     kYFieldNumber = 3,
+    kVectorXFieldNumber = 4,
+    kVectorYFieldNumber = 5,
   };
   // uint64 oid = 1;
   void clear_oid();
@@ -199,6 +201,16 @@ class Ball :
   float y() const;
   void set_y(float value);
 
+  // float vector_x = 4;
+  void clear_vector_x();
+  float vector_x() const;
+  void set_vector_x(float value);
+
+  // float vector_y = 5;
+  void clear_vector_y();
+  float vector_y() const;
+  void set_vector_y(float value);
+
   // @@protoc_insertion_point(class_scope:Ball)
  private:
   class _Internal;
@@ -207,6 +219,8 @@ class Ball :
   ::PROTOBUF_NAMESPACE_ID::uint64 oid_;
   float x_;
   float y_;
+  float vector_x_;
+  float vector_y_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Ball_2eproto;
 };
@@ -325,10 +339,11 @@ class BallUpdateEvent :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBallFieldNumber = 2,
+    kBallFieldNumber = 3,
     kSizeFieldNumber = 1,
+    kSortFieldNumber = 2,
   };
-  // repeated .Ball ball = 2;
+  // repeated .Ball ball = 3;
   int ball_size() const;
   void clear_ball();
   ::Ball* mutable_ball(int index);
@@ -344,6 +359,11 @@ class BallUpdateEvent :
   ::PROTOBUF_NAMESPACE_ID::uint32 size() const;
   void set_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
 
+  // uint32 sort = 2;
+  void clear_sort();
+  ::PROTOBUF_NAMESPACE_ID::uint32 sort() const;
+  void set_sort(::PROTOBUF_NAMESPACE_ID::uint32 value);
+
   // @@protoc_insertion_point(class_scope:BallUpdateEvent)
  private:
   class _Internal;
@@ -351,6 +371,7 @@ class BallUpdateEvent :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Ball > ball_;
   ::PROTOBUF_NAMESPACE_ID::uint32 size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 sort_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Ball_2eproto;
 };
@@ -407,6 +428,34 @@ inline void Ball::set_y(float value) {
   // @@protoc_insertion_point(field_set:Ball.y)
 }
 
+// float vector_x = 4;
+inline void Ball::clear_vector_x() {
+  vector_x_ = 0;
+}
+inline float Ball::vector_x() const {
+  // @@protoc_insertion_point(field_get:Ball.vector_x)
+  return vector_x_;
+}
+inline void Ball::set_vector_x(float value) {
+  
+  vector_x_ = value;
+  // @@protoc_insertion_point(field_set:Ball.vector_x)
+}
+
+// float vector_y = 5;
+inline void Ball::clear_vector_y() {
+  vector_y_ = 0;
+}
+inline float Ball::vector_y() const {
+  // @@protoc_insertion_point(field_get:Ball.vector_y)
+  return vector_y_;
+}
+inline void Ball::set_vector_y(float value) {
+  
+  vector_y_ = value;
+  // @@protoc_insertion_point(field_set:Ball.vector_y)
+}
+
 // -------------------------------------------------------------------
 
 // BallUpdateEvent
@@ -425,7 +474,21 @@ inline void BallUpdateEvent::set_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:BallUpdateEvent.size)
 }
 
-// repeated .Ball ball = 2;
+// uint32 sort = 2;
+inline void BallUpdateEvent::clear_sort() {
+  sort_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 BallUpdateEvent::sort() const {
+  // @@protoc_insertion_point(field_get:BallUpdateEvent.sort)
+  return sort_;
+}
+inline void BallUpdateEvent::set_sort(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  sort_ = value;
+  // @@protoc_insertion_point(field_set:BallUpdateEvent.sort)
+}
+
+// repeated .Ball ball = 3;
 inline int BallUpdateEvent::ball_size() const {
   return ball_.size();
 }

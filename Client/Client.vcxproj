@@ -150,11 +150,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp" />
-    <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="systems\BallCreateSystem.cpp" />
     <ClCompile Include="systems\BallRenderSystem.cpp" />
+    <ClCompile Include="systems\MoveManager.cpp" />
     <ClCompile Include="systems\NetManager.cpp" />
     <ClCompile Include="systems\WindowSystem.cpp" />
   </ItemGroup>
@@ -170,6 +170,7 @@
     <ClInclude Include="singleton\GameWindow.h" />
     <ClInclude Include="systems\BallCreateSystem.h" />
     <ClInclude Include="systems\BallRenderSystem.h" />
+    <ClInclude Include="systems\MoveManager.h" />
     <ClInclude Include="systems\NetManager.h" />
     <ClInclude Include="systems\WindowSystem.h" />
   </ItemGroup>

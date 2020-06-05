@@ -170,8 +170,10 @@
     <ClInclude Include="components\VectorComponent.h" />
     <ClInclude Include="entitys\BallEntity.h" />
     <ClInclude Include="singleton\GameConfigSingle.h" />
+    <ClInclude Include="singleton\NerConnect.h" />
     <ClInclude Include="singleton\SendBuffDispatch.h" />
     <ClInclude Include="systems\BallCreateManager.h" />
+    <ClInclude Include="systems\NetConnectManager.h" />
     <ClInclude Include="systems\MoveManager.h" />
     <ClInclude Include="systems\NetManager.h" />
     <ClInclude Include="systems\ProtoBuildManager.h" />
@@ -181,8 +183,8 @@
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="..\Common\include\tool\Time.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="singleton\SendBuffDispatch.cpp" />
     <ClCompile Include="systems\BallCreateManager.cpp" />
+    <ClCompile Include="systems\NetConnectManager.cpp" />
     <ClCompile Include="systems\MoveManager.cpp" />
     <ClCompile Include="systems\NetManager.cpp" />
     <ClCompile Include="systems\ProtoBuildManager.cpp" />

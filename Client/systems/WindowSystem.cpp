@@ -18,7 +18,8 @@ bool WindowInit(entt::registry& reg_) {
         LogError << _message << FlushLog;
     }
 
-    WindowInfo->m_render = SDL_CreateRenderer(WindowInfo->m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    WindowInfo->m_render = SDL_CreateRenderer(WindowInfo->m_window, -1, SDL_RENDERER_ACCELERATED );
+    //WindowInfo->m_render = SDL_CreateRenderer(WindowInfo->m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     if (!WindowInfo->m_render)
     {

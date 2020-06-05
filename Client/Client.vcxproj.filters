@@ -22,9 +22,6 @@
     <ClCompile Include="systems\NetManager.cpp">
       <Filter>src\systems</Filter>
     </ClCompile>
-    <ClCompile Include="..\BaseEngine\singleton\ProtobufDispatcher.cpp">
-      <Filter>src\singleton</Filter>
-    </ClCompile>
     <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp">
       <Filter>src\singleton</Filter>
     </ClCompile>
@@ -35,6 +32,9 @@
       <Filter>src\systems</Filter>
     </ClCompile>
     <ClCompile Include="systems\BallRenderSystem.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\MoveManager.cpp">
       <Filter>src\systems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,6 +77,9 @@
     </ClInclude>
     <ClInclude Include="..\BaseEngine\systems\InputManager.h">
       <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\MoveManager.h">
+      <Filter>src\systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

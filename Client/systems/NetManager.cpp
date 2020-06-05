@@ -12,17 +12,18 @@
 
 using namespace google::protobuf;
 bool NetInit(entt::registry& reg_) {
-    zmq::socket_t _sock(NETINFO->m_context, zmq::socket_type::sub);
+    zmq::socket_t _sock(NETINFO->m_context, zmq::socket_type::dealer);
     _sock.connect("tcp://127.0.0.1:7000");
-    _sock.set(zmq::sockopt::subscribe, "");
+    //_sock.set(zmq::sockopt::subscribe, "");
     NETINFO->m_sub_socket.swap(_sock);
+    NETINFO->m_sub_socket.send(zmq::buffer("connect"),zmq::send_flags::dontwait);
     LogInfo << "NetInit" << FlushLog;
     return true;
 }
 bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
     zmq::message_t _recv_type_name_msg;
     zmq::message_t _recv_msg;
-    if (NETINFO->m_sub_socket.recv(_recv_type_name_msg, zmq::recv_flags::none)) {
+    if (NETINFO->m_sub_socket.recv(_recv_type_name_msg, zmq::recv_flags::dontwait)) {
         if (_recv_type_name_msg.more()) {
             if (NETINFO->m_sub_socket.recv(_recv_msg, zmq::recv_flags::dontwait)) {
                 std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv_type_name_msg.to_string(),_recv_msg.to_string()));
@@ -32,7 +33,6 @@ bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
         else {
             LogError << "type error" << _recv_type_name_msg << FlushLog;
         }
-
     }
     return true;
 }
