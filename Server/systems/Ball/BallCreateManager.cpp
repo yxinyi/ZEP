@@ -8,8 +8,18 @@
 
 #include<random>  
 #include<time.h> 
+#include <fstream>
 
 bool BallCreateInit(entt::registry& reg_) {
+    std::ifstream _infile;
+    std::string _buff_str;
+    _infile.open("create_config.txt", std::ios::in);
+    assert(_infile.is_open());
+    int _create_cnt = 0;
+    while (getline(_infile, _buff_str))
+    {
+        _create_cnt = std::stoi(_buff_str.c_str());
+    }
 
     std::default_random_engine _random(time(NULL));
     std::uniform_real_distribution<double> _random_x_range(0.f, 1280.0);
@@ -17,7 +27,7 @@ bool BallCreateInit(entt::registry& reg_) {
     std::uniform_real_distribution<double> _random_speed_x_range(-100.f, 100.f);
     std::uniform_real_distribution<double> _random_speed_y_range(-100.f, 100.f);
     LogInfo << "MoveMgrInit" << FlushLog;
-    for (size_t _slot = 0; _slot < 100000;_slot++) {
+    for (size_t _slot = 0; _slot < _create_cnt;_slot++) {
         auto _entity = reg_.create();
         reg_.emplace<BallTag>(_entity);
         reg_.emplace<VectorChange>(_entity);

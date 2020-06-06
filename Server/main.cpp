@@ -13,8 +13,8 @@
 void MainLoop() {
 
     try{
-        //const float _one_frame_time = 1000.f / static_cast<float>(ENV->m_frame);
-        const float _one_frame_time = 1000.f / static_cast<float>(30);
+        const float _one_frame_time = 1000.f / static_cast<float>(ENV->m_frame);
+        //const float _one_frame_time = 1000.f / static_cast<float>(100);
         Timer _frame_timer;
         Timer _tick_timer;
         Timer _second_fps_timer;

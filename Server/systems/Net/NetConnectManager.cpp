@@ -16,7 +16,7 @@ bool NetworkConnectInit(entt::registry& reg_) {
     reg_.emplace<RouteIDCpt>(_entity, "MainSocket");
     std::shared_ptr<zmq::socket_t> _sock = reg_.get<SocketCpt>(_entity).socket;
     //_sock.reset(new zmq::socket_t(NetInfo->m_context, zmq::socket_type::router));
-    _sock->bind("tcp://127.0.0.1:7000");
+    _sock->bind("tcp://*:7000");
     NetConnect["MainSocket"] = _entity;
     return true;
 }

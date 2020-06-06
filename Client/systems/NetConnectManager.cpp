@@ -10,7 +10,7 @@
 #include "NetConnectManager.h"
 #include "include/tool/ManagerInitHelper.h"
 #include "include/tool/LogInfo.h"
-
+#include <fstream>
 
 bool NetworkConnectInit(entt::registry& reg_) {
     auto _entity = reg_.create();
@@ -19,7 +19,16 @@ bool NetworkConnectInit(entt::registry& reg_) {
     reg_.emplace<RouteIDCpt>(_entity, "");
     reg_.emplace<SendSocket>(_entity);
     std::shared_ptr<zmq::socket_t> _sock = reg_.get<SocketCpt>(_entity).socket;
-    _sock->connect("tcp://127.0.0.1:7000");
+
+    std::ifstream _infile;
+    std::string _buff_str;
+    _infile.open("connect_ip.txt", std::ios::in);
+    assert(_infile.is_open());
+    while (getline(_infile, _buff_str))
+    {
+    }
+    _sock->connect("tcp://"+ _buff_str +":7000");
+
 
     NetConnect["MainSocket"] = _entity;
     NetConnect["Shakehand"] = _entity;

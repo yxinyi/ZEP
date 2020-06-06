@@ -20,11 +20,23 @@ bool MoveMgrUpdate(const int64_t& dt_, entt::registry& reg_) {
         if (_pos.x >= GameConfig->_windows_x || _pos.x <= 0) {
             auto& _change = _view.get<VectorChange>(_en_it);
             _change.is_change = true;
+            if (_pos.x >= GameConfig->_windows_x) {
+                _pos.x = GameConfig->_windows_x;
+            }
+            if (_pos.x <= 0) {
+                _pos.x = 0;
+            }
             _vec.x = -_vec.x;
         }
         if (_pos.y >= GameConfig->_windows_y || _pos.y <= 0) {
             auto& _change = _view.get<VectorChange>(_en_it);
             _change.is_change = true;
+            if (_pos.y >= GameConfig->_windows_y) {
+                _pos.y = GameConfig->_windows_y;
+            }
+            if (_pos.y <= 0) {
+                _pos.y = 0;
+            }
             _vec.y = -_vec.y;
         }
 
