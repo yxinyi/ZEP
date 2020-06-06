@@ -20,6 +20,7 @@ void MainLoop() {
         Timer _tick_timer;
         Timer _second_fps_timer;
         uint32_t _fps_cnt = 1;
+        SetConsoleTitleA("client");
         while (ENV->m_open) {
             const int64_t _this_frame_time = _frame_timer.elapsed();
             if (_this_frame_time >= _one_frame_time) {
@@ -43,7 +44,9 @@ void MainLoop() {
                     _fps_cnt ++;
                 }
                 else {
-                    LogInfo << "this second fps is : " << _fps_cnt << FlushLog;
+                    std::string _title = "client fps : ";
+                    _title += std::to_string(_fps_cnt);
+                    SetConsoleTitleA(_title.c_str());
                     _second_fps_timer.reset();
                     _fps_cnt = 1;
                 }
