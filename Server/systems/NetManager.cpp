@@ -1,4 +1,3 @@
-#include "MoveManager.h"
 #include <memory>
 #include "../components/PositionComponent.h"
 #include "../components/VectorComponent.h"
@@ -43,12 +42,26 @@ bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
     reg_.view<Connect>().each([](auto& connect) {
         for (auto& _msg_it : connect.m_msg_list) {
             LogInfo << "send msg to client: " << connect.m_route_id << FlushLog;
-            NETINFO->m_pub_socket.send(zmq::buffer(connect.m_route_id), zmq::send_flags::sndmore);
+            zmq::send_result_t _route_id_result = NETINFO->m_pub_socket.send(zmq::buffer(connect.m_route_id), zmq::send_flags::sndmore);
+            if (_route_id_result == -1) {
+                zmq::error_t _err;
+                LogInfo << "send error: " << _err.what() << FlushLog;
+            }
+
             static std::string _buff;
             _buff.clear();
             if (_msg_it->SerializeToString(&_buff)) {
-                NETINFO->m_pub_socket.send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
-                NETINFO->m_pub_socket.send(zmq::buffer(_buff), zmq::send_flags::none);
+                zmq::send_result_t _result = NETINFO->m_pub_socket.send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
+                if (_result == -1) {
+                    zmq::error_t _err;
+                    LogInfo << "send error: " << _err.what() << FlushLog;
+                }
+
+                zmq::send_result_t _more_result = NETINFO->m_pub_socket.send(zmq::buffer(_buff), zmq::send_flags::none);
+                if (_more_result == -1) {
+                    zmq::error_t _err;
+                    LogInfo << "send error: " << _err.what() << FlushLog;
+                }
             }
         }
         connect.m_msg_list.clear();

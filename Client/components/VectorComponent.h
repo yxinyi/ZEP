@@ -3,6 +3,6 @@
 class VectorComponent final
 {
 public:
-    float x = 0;
-    float y = 0;
+    double x = 0;
+    double y = 0;
 };

@@ -96,7 +96,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>..\Common\;..\Common\include;..\BaseEngine\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Common\;..\Common\include;..\BaseEngine\;..\Server</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -127,14 +127,14 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>..\Common\;..\Common\include;..\BaseEngine\</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\Common\;..\Common\include;..\BaseEngine\;..\Server</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Common\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libprotoc.lib;libzmq-v141-mt-4_3_2.lib;libzmq-v141-mt-s-4_3_2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobufd.lib;libprotoc.lib;libzmq-v141-mt-4_3_2.lib;libzmq-v141-mt-s-4_3_2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -172,22 +172,22 @@
     <ClInclude Include="singleton\GameConfigSingle.h" />
     <ClInclude Include="singleton\NerConnect.h" />
     <ClInclude Include="singleton\SendBuffDispatch.h" />
-    <ClInclude Include="systems\BallCreateManager.h" />
+    <ClInclude Include="systems\Ball\BallCreateManager.h" />
+    <ClInclude Include="systems\Ball\BallMoveManager.h" />
+    <ClInclude Include="systems\Ball\BallProtoBuildManager.h" />
     <ClInclude Include="systems\NetConnectManager.h" />
-    <ClInclude Include="systems\MoveManager.h" />
     <ClInclude Include="systems\NetManager.h" />
-    <ClInclude Include="systems\ProtoBuildManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\BaseEngine\singleton\UniqueNumberFactory.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="..\Common\include\tool\Time.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="systems\BallCreateManager.cpp" />
+    <ClCompile Include="systems\Ball\BallCreateManager.cpp" />
+    <ClCompile Include="systems\Ball\BallMoveManager.cpp" />
+    <ClCompile Include="systems\Ball\BallProtoBuildManager.cpp" />
     <ClCompile Include="systems\NetConnectManager.cpp" />
-    <ClCompile Include="systems\MoveManager.cpp" />
     <ClCompile Include="systems\NetManager.cpp" />
-    <ClCompile Include="systems\ProtoBuildManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

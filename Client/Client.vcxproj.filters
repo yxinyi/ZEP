@@ -13,6 +13,9 @@
     <Filter Include="src\singleton">
       <UniqueIdentifier>{46e79bfe-8c3e-4361-bf31-6f118a2f9218}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\component">
+      <UniqueIdentifier>{b5997b43-a8bc-4e84-a119-6144e9e44f0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
@@ -36,6 +39,12 @@
     </ClCompile>
     <ClCompile Include="systems\MoveManager.cpp">
       <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\NetShakeHandManager.cpp">
+      <Filter>src\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\include\proto\Shakehand.pb.cc">
+      <Filter>proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +89,21 @@
     </ClInclude>
     <ClInclude Include="systems\MoveManager.h">
       <Filter>src\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="components\PositionComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="components\VectorComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="components\ObjectidComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="components\ShakeHandComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\proto\Shakehand.pb.h">
+      <Filter>proto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

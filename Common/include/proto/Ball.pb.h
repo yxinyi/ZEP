@@ -191,25 +191,25 @@ class Ball :
   ::PROTOBUF_NAMESPACE_ID::uint64 oid() const;
   void set_oid(::PROTOBUF_NAMESPACE_ID::uint64 value);
 
-  // float x = 2;
+  // double x = 2;
   void clear_x();
-  float x() const;
-  void set_x(float value);
+  double x() const;
+  void set_x(double value);
 
-  // float y = 3;
+  // double y = 3;
   void clear_y();
-  float y() const;
-  void set_y(float value);
+  double y() const;
+  void set_y(double value);
 
-  // float vector_x = 4;
+  // double vector_x = 4;
   void clear_vector_x();
-  float vector_x() const;
-  void set_vector_x(float value);
+  double vector_x() const;
+  void set_vector_x(double value);
 
-  // float vector_y = 5;
+  // double vector_y = 5;
   void clear_vector_y();
-  float vector_y() const;
-  void set_vector_y(float value);
+  double vector_y() const;
+  void set_vector_y(double value);
 
   // @@protoc_insertion_point(class_scope:Ball)
  private:
@@ -217,10 +217,10 @@ class Ball :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::uint64 oid_;
-  float x_;
-  float y_;
-  float vector_x_;
-  float vector_y_;
+  double x_;
+  double y_;
+  double vector_x_;
+  double vector_y_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Ball_2eproto;
 };
@@ -400,57 +400,57 @@ inline void Ball::set_oid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:Ball.oid)
 }
 
-// float x = 2;
+// double x = 2;
 inline void Ball::clear_x() {
   x_ = 0;
 }
-inline float Ball::x() const {
+inline double Ball::x() const {
   // @@protoc_insertion_point(field_get:Ball.x)
   return x_;
 }
-inline void Ball::set_x(float value) {
+inline void Ball::set_x(double value) {
   
   x_ = value;
   // @@protoc_insertion_point(field_set:Ball.x)
 }
 
-// float y = 3;
+// double y = 3;
 inline void Ball::clear_y() {
   y_ = 0;
 }
-inline float Ball::y() const {
+inline double Ball::y() const {
   // @@protoc_insertion_point(field_get:Ball.y)
   return y_;
 }
-inline void Ball::set_y(float value) {
+inline void Ball::set_y(double value) {
   
   y_ = value;
   // @@protoc_insertion_point(field_set:Ball.y)
 }
 
-// float vector_x = 4;
+// double vector_x = 4;
 inline void Ball::clear_vector_x() {
   vector_x_ = 0;
 }
-inline float Ball::vector_x() const {
+inline double Ball::vector_x() const {
   // @@protoc_insertion_point(field_get:Ball.vector_x)
   return vector_x_;
 }
-inline void Ball::set_vector_x(float value) {
+inline void Ball::set_vector_x(double value) {
   
   vector_x_ = value;
   // @@protoc_insertion_point(field_set:Ball.vector_x)
 }
 
-// float vector_y = 5;
+// double vector_y = 5;
 inline void Ball::clear_vector_y() {
   vector_y_ = 0;
 }
-inline float Ball::vector_y() const {
+inline double Ball::vector_y() const {
   // @@protoc_insertion_point(field_get:Ball.vector_y)
   return vector_y_;
 }
-inline void Ball::set_vector_y(float value) {
+inline void Ball::set_vector_y(double value) {
   
   vector_y_ = value;
   // @@protoc_insertion_point(field_set:Ball.vector_y)

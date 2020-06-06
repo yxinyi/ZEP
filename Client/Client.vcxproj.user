@@ -5,8 +5,10 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerEnvironment>..\Common\dll</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>$(ProjectDir)..\Common\dll</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerAttach>false</LocalDebuggerAttach>
+    <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
   </PropertyGroup>
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>

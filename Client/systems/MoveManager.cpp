@@ -14,8 +14,8 @@ bool MoveMgrUpdate(const int64_t& dt_, entt::registry& reg_) {
     for (auto _en_it : _view) {
         auto& _pos = _view.get<PositionComponent>(_en_it);
         auto& _vec = _view.get<VectorComponent>(_en_it);
-        _pos.x += _vec.x;
-        _pos.y += _vec.y;
+        _pos.x += static_cast<double>(_vec.x *dt_) / 1000;
+        _pos.y += static_cast<double>(_vec.y *dt_) / 1000;
     }
     
     return true;

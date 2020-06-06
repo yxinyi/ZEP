@@ -1,9 +1,9 @@
 ﻿  BallCreateManager.cpp
-F:\zep\ZEP\Server\systems\BallCreateManager.cpp(14,44): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-F:\zep\ZEP\Server\systems\BallCreateManager.cpp(33,44): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+F:\zep\ZEP\Server\systems\Ball\BallCreateManager.cpp(14,44): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+F:\zep\ZEP\Server\systems\Ball\BallCreateManager.cpp(34,44): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   正在生成代码
-  1 of 2024 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  13 of 2028 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Server.vcxproj -> F:\zep\ZEP\Server\..\bin\Serverx64.exe

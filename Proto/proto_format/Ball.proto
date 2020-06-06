@@ -2,10 +2,10 @@ syntax = "proto3";
 
 message Ball {
 	uint64 oid = 1;
-	float x = 2;
-	float y = 3;
-	float vector_x = 4;
-	float vector_y = 5;
+	double x = 2;
+	double y = 3;
+	double vector_x = 4;
+	double vector_y = 5;
 }
  
 message BallUpdateEvent {

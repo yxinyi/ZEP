@@ -11,6 +11,7 @@
 #include "./include/proto/Ball.pb.h"
 #include "include/tool/Timer.h"
 #include "singleton/EnvironmentInfo.h"
+#include "singleton/BallManager.h"
 
 
 
@@ -26,8 +27,8 @@ void MainLoop() {
             const int64_t _this_frame_time = _frame_timer.elapsed();
             if (_this_frame_time >= _one_frame_time) {
                 _tick_timer.reset();
-                SYSMGR->loop(_this_frame_time, ENV->m_registry);
                 _frame_timer.reset();
+                SYSMGR->loop(_this_frame_time, ENV->m_registry);
 
                 int64_t _tick_time = _tick_timer.elapsed();
                 if (_tick_time > 150) {
@@ -46,10 +47,12 @@ void MainLoop() {
                 }
                 else {
                     LogInfo << "this second fps is : " << _fps_cnt << FlushLog;
+                    LogInfo << "client ball size : " << BallMgr.size() << FlushLog;
                     _second_fps_timer.reset();
                     _fps_cnt = 1;
                 }
             }
+
         }
     }
     catch (const std::exception& e)
@@ -65,5 +68,6 @@ void MainLoop() {
 int main() {
     SYSMGR->init(ENV->m_registry);
     MainLoop();
+    SYSMGR->destory(ENV->m_registry);
     return 0;
 }

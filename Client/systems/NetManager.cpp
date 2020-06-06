@@ -20,6 +20,11 @@ bool NetInit(entt::registry& reg_) {
     LogInfo << "NetInit" << FlushLog;
     return true;
 }
+bool NetDestory(entt::registry&) {
+    NETINFO->m_sub_socket.close();
+    NETINFO->m_context.close();
+    return true;
+}
 bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
     zmq::message_t _recv_type_name_msg;
     zmq::message_t _recv_msg;
@@ -39,6 +44,7 @@ bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
 
 MgrRegHelper(NetMgr) {
     SYSMGR->regInitSys(NetInit);
+    SYSMGR->regDestorySys(NetDestory);
     SYSMGR->regSys(SystemLevel::NORMAl, NetUpdate);
 }
 

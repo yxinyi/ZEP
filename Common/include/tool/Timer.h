@@ -1,5 +1,6 @@
 #pragma once
 #include<chrono>
+#include "include/tool/LogInfo.h"
 
 
 class Timer
@@ -56,4 +57,18 @@ public:
 
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> m_begin;
+};
+
+
+class PerFormanceProbe {
+public:
+    PerFormanceProbe(std::string probe_name_) {
+        m_probe_name = probe_name_;
+    }
+    ~PerFormanceProbe() {
+        LogInfo << m_probe_name << " : " << m_timer.elapsed_micro() << "millis sceonds" << FlushLog; \
+    }
+private:
+    std::string m_probe_name;
+    Timer m_timer;
 };

@@ -25,27 +25,18 @@
     <Filter Include="src\singleton">
       <UniqueIdentifier>{95b2c4a0-4358-46b5-8ae9-42b522a66188}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\system\Ball">
+      <UniqueIdentifier>{15c69a25-0bb0-44d0-bba8-530ade06569d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\include\entt.hpp">
       <Filter>entt</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\include\proto\Ball.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
     <ClInclude Include="..\BaseEngine\systems\SystemManager.h">
       <Filter>src\system</Filter>
     </ClInclude>
-    <ClInclude Include="systems\BallCreateManager.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="systems\MoveManager.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
     <ClInclude Include="systems\NetManager.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="systems\ProtoBuildManager.h">
       <Filter>src\system</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\include\tool\LogInfo.h">
@@ -96,21 +87,21 @@
     <ClInclude Include="singleton\NerConnect.h">
       <Filter>src\singleton</Filter>
     </ClInclude>
+    <ClInclude Include="systems\Ball\BallCreateManager.h">
+      <Filter>src\system\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\Ball\BallMoveManager.h">
+      <Filter>src\system\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\Ball\BallProtoBuildManager.h">
+      <Filter>src\system\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\proto\Ball.pb.h">
+      <Filter>src\system\Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
-    <ClCompile Include="systems\BallCreateManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="systems\MoveManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
     <ClCompile Include="systems\NetManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="systems\ProtoBuildManager.cpp">
       <Filter>src\system</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\include\tool\Time.cpp">
@@ -122,6 +113,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="systems\NetConnectManager.cpp">
       <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\Ball\BallMoveManager.cpp">
+      <Filter>src\system\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\Ball\BallCreateManager.cpp">
+      <Filter>src\system\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\Ball\BallProtoBuildManager.cpp">
+      <Filter>src\system\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
+      <Filter>src\system\Ball</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

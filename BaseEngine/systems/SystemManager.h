@@ -5,6 +5,7 @@
 
 using SystemFunc = std::function<bool(const int64_t&, entt::registry&)>;
 using SystemInitFunc = std::function<bool(entt::registry&)>;
+using SystemDestoryFunc = std::function<bool(entt::registry&)>;
 enum class SystemLevel
 {
     BEFORE = 0,
@@ -20,6 +21,9 @@ public:
         m_init_pool.push_back(std::forward<SystemInitFunc>(func_));
     }
 
+    void regDestorySys(SystemDestoryFunc&& func_) {
+        m_destory_pool.push_back(std::forward<SystemDestoryFunc>(func_));
+    }
     void regSys(const SystemLevel& system_level_, SystemFunc&& func_) {
         m_system_pool[static_cast<size_t>(system_level_)].push_back(std::forward<SystemFunc>(func_));
     }
@@ -28,7 +32,11 @@ public:
             _sys_it(registry_);
         }
     }
-
+    void destory(entt::registry& registry_) {
+        for (const auto& _sys_it : m_destory_pool) {
+            _sys_it(registry_);
+        }
+    }
     void loop(const int64_t& time_, entt::registry& registry_) {
         for (const auto& _lev_pool_it : m_system_pool) {
             for (const auto& _sys_it : _lev_pool_it) {
@@ -36,12 +44,14 @@ public:
             }
         }
     }
-    ~SystemManager()=default;
+    ~SystemManager() {
+    };
 
 private:
     SystemManager() :m_system_pool(static_cast<size_t>(SystemLevel::MAX)) {}
     std::vector<std::vector<SystemFunc>> m_system_pool; //system lev func vec
-    std::vector<SystemInitFunc> m_init_pool; 
+    std::vector<SystemInitFunc> m_init_pool;
+    std::vector<SystemDestoryFunc> m_destory_pool;
 };
 
 #define SYSMGR Singleton<SystemManager>::getInstance()

@@ -9,6 +9,7 @@
 #include "singleton/ProtobufCodec.h"
 #include "singleton/ProtobufDispatcher.h"
 #include "singleton/BallManager.h"
+#include "include/tool/Timer.h"
 #include "BallCreateSystem.h"
 #include "./proto/Ball.pb.h"
 
@@ -20,10 +21,10 @@ bool BallCreateInit(entt::registry& reg_) {
         for (size_t _idx = 0; _idx < _size; _idx++) {
             const Ball& _ball = message_->ball(static_cast<int>(_idx));
             const uint64_t _ball_oid = _ball.oid();
-            const float _ball_x = _ball.x();
-            const float _ball_y = _ball.y();
-            const float _ball_vector_x = _ball.vector_x();
-            const float _ball_vector_y = _ball.vector_y();
+            const double _ball_x = _ball.x();
+            const double _ball_y = _ball.y();
+            const double _ball_vector_x = _ball.vector_x();
+            const double _ball_vector_y = _ball.vector_y();
             if (BallMgr.find(_ball_oid) == BallMgr.end()) {
                 auto _entity = reg_.create();
                 reg_.emplace<BallTag>(_entity);

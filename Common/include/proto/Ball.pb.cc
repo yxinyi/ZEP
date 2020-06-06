@@ -89,8 +89,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_Ball_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\nBall.proto\"M\n\004Ball\022\013\n\003oid\030\001 \001(\004\022\t\n\001x\030\002"
-  " \001(\002\022\t\n\001y\030\003 \001(\002\022\020\n\010vector_x\030\004 \001(\002\022\020\n\010vec"
-  "tor_y\030\005 \001(\002\"B\n\017BallUpdateEvent\022\014\n\004size\030\001"
+  " \001(\001\022\t\n\001y\030\003 \001(\001\022\020\n\010vector_x\030\004 \001(\001\022\020\n\010vec"
+  "tor_y\030\005 \001(\001\"B\n\017BallUpdateEvent\022\014\n\004size\030\001"
   " \001(\r\022\014\n\004sort\030\002 \001(\r\022\023\n\004ball\030\003 \003(\0132\005.Ballb"
   "\006proto3"
   ;
@@ -185,32 +185,32 @@ const char* Ball::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float x = 2;
+      // double x = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+          x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // float y = 3;
+      // double y = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
+          y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // float vector_x = 4;
+      // double vector_x = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          vector_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+          vector_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // float vector_y = 5;
+      // double vector_y = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          vector_y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41)) {
+          vector_y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
       default: {
@@ -256,12 +256,12 @@ bool Ball::MergePartialFromCodedStream(
         break;
       }
 
-      // float x = 2;
+      // double x = 2;
       case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (21 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (17 & 0xFF)) {
 
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                   double, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &x_)));
         } else {
           goto handle_unusual;
@@ -269,12 +269,12 @@ bool Ball::MergePartialFromCodedStream(
         break;
       }
 
-      // float y = 3;
+      // double y = 3;
       case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (29 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (25 & 0xFF)) {
 
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                   double, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &y_)));
         } else {
           goto handle_unusual;
@@ -282,12 +282,12 @@ bool Ball::MergePartialFromCodedStream(
         break;
       }
 
-      // float vector_x = 4;
+      // double vector_x = 4;
       case 4: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (37 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (33 & 0xFF)) {
 
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                   double, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &vector_x_)));
         } else {
           goto handle_unusual;
@@ -295,12 +295,12 @@ bool Ball::MergePartialFromCodedStream(
         break;
       }
 
-      // float vector_y = 5;
+      // double vector_y = 5;
       case 5: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (45 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (41 & 0xFF)) {
 
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                   double, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &vector_y_)));
         } else {
           goto handle_unusual;
@@ -340,24 +340,24 @@ void Ball::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(1, this->oid(), output);
   }
 
-  // float x = 2;
+  // double x = 2;
   if (!(this->x() <= 0 && this->x() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(2, this->x(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDouble(2, this->x(), output);
   }
 
-  // float y = 3;
+  // double y = 3;
   if (!(this->y() <= 0 && this->y() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(3, this->y(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDouble(3, this->y(), output);
   }
 
-  // float vector_x = 4;
+  // double vector_x = 4;
   if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(4, this->vector_x(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDouble(4, this->vector_x(), output);
   }
 
-  // float vector_y = 5;
+  // double vector_y = 5;
   if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(5, this->vector_y(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDouble(5, this->vector_y(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -378,24 +378,24 @@ void Ball::SerializeWithCachedSizes(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->oid(), target);
   }
 
-  // float x = 2;
+  // double x = 2;
   if (!(this->x() <= 0 && this->x() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->x(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->x(), target);
   }
 
-  // float y = 3;
+  // double y = 3;
   if (!(this->y() <= 0 && this->y() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->y(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->y(), target);
   }
 
-  // float vector_x = 4;
+  // double vector_x = 4;
   if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->vector_x(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->vector_x(), target);
   }
 
-  // float vector_y = 5;
+  // double vector_y = 5;
   if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->vector_y(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->vector_y(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -426,24 +426,24 @@ size_t Ball::ByteSizeLong() const {
         this->oid());
   }
 
-  // float x = 2;
+  // double x = 2;
   if (!(this->x() <= 0 && this->x() >= 0)) {
-    total_size += 1 + 4;
+    total_size += 1 + 8;
   }
 
-  // float y = 3;
+  // double y = 3;
   if (!(this->y() <= 0 && this->y() >= 0)) {
-    total_size += 1 + 4;
+    total_size += 1 + 8;
   }
 
-  // float vector_x = 4;
+  // double vector_x = 4;
   if (!(this->vector_x() <= 0 && this->vector_x() >= 0)) {
-    total_size += 1 + 4;
+    total_size += 1 + 8;
   }
 
-  // float vector_y = 5;
+  // double vector_y = 5;
   if (!(this->vector_y() <= 0 && this->vector_y() >= 0)) {
-    total_size += 1 + 4;
+    total_size += 1 + 8;
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);

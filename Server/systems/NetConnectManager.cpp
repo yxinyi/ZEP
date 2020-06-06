@@ -1,4 +1,3 @@
-#include "MoveManager.h"
 #include <memory>
 #include "../components/PositionComponent.h"
 #include "../components/VectorComponent.h"
@@ -21,7 +20,7 @@ bool NetworkConnectUpdate(const int64_t& dt_, entt::registry& reg_) {
     return true;
 }
 
-MgrRegHelper(ConnectKeep) {
+MgrRegHelper(NetworkConnect) {
     SYSMGR->regInitSys(NetworkConnectInit);
     SYSMGR->regSys(SystemLevel::NORMAl, NetworkConnectUpdate);
 }

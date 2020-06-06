@@ -7,8 +7,10 @@ f:\zep\zep\bin\x64\release\server\sendbuffdispatch.obj
 f:\zep\zep\bin\x64\release\server\main.obj
 f:\zep\zep\bin\x64\release\server\time.obj
 f:\zep\zep\bin\x64\release\server\ball.pb.obj
-f:\zep\zep\bin\x64\release\server\systemmanager.obj
 f:\zep\zep\bin\x64\release\server\uniquenumberfactory.obj
+f:\zep\zep\bin\x64\release\server\netconnectmanager.obj
+f:\zep\zep\bin\x64\release\server\ballmovemanager.obj
+f:\zep\zep\bin\x64\release\server\ballprotobuildmanager.obj
 f:\zep\zep\bin\serverx64.exe
 f:\zep\zep\bin\serverx64.pdb
 f:\zep\zep\bin\serverx64.ipdb
