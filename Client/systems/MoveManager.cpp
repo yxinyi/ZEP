@@ -1,10 +1,12 @@
 #include "MoveManager.h"
-#include "../components/PositionComponent.h"
-#include "../components/VectorComponent.h"
-#include "../components/ObjectidComponent.h"
-#include "../entitys/BallEntity.h"
-#include "../singleton/GameConfigSingle.h"
-
+#include "components/PositionComponent.h"
+#include "components/VectorComponent.h"
+#include "components/ObjectidComponent.h"
+#include "entitys/BallEntity.h"
+#include "include/tool/ManagerInitHelper.h"
+#include "singleton/GameConfigSingle.h"
+#include "systems/SystemManager.h"
+#include "include/tool/LogInfo.h"
 
 bool MoveMgrInit(entt::registry& reg_) {
     return true;

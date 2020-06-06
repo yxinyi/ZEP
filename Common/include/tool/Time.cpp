@@ -1,7 +1,6 @@
 #include "Time.h"
 #include <ctime>
 #include <iomanip>
-
 #include <sstream>
 
 int64_t Time::Now() {

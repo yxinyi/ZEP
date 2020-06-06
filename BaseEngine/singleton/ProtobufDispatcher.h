@@ -19,9 +19,10 @@ class Callback
 {
 public:
     virtual ~Callback() = default;
-    virtual void onMessage(zmq::socket_t&,
+    virtual void onMessage(std::shared_ptr<zmq::socket_t>,
         const MessagePtr&,
-        const int64_t&) const = 0;
+        const int64_t&,
+        const string&) const = 0;
 };
 
 template <typename T>
@@ -30,18 +31,19 @@ class CallbackT : public Callback
     static_assert(std::is_base_of<google::protobuf::Message, T>::value,
         "T must be derived from gpb::Message.");
 public:
-    using ProtobufMessageTCallback = std::function<void(zmq::socket_t&, const std::shared_ptr<T>& message, const int64_t&)>;
+    using ProtobufMessageTCallback = std::function<void(std::shared_ptr<zmq::socket_t>, const std::shared_ptr<T>& message, const int64_t&,const std::string&)>;
 
     CallbackT(const ProtobufMessageTCallback& callback_)
         : m_callback(callback_) {
     }
 
-    void onMessage(zmq::socket_t& socket_,
+    void onMessage(std::shared_ptr<zmq::socket_t> socket_,
         const MessagePtr& msg_,
-        const int64_t& receive_time_) const override {
+        const int64_t& receive_time_,
+        const std::string& str_) const override {
         std::shared_ptr<T> _concrete = std::static_pointer_cast<T>(msg_);
         assert(_concrete != NULL);
-        m_callback(socket_, _concrete, receive_time_);
+        m_callback(socket_, _concrete, receive_time_, str_);
     }
 
 private:
@@ -50,21 +52,22 @@ private:
 
 class ProtobufDispatch : public Singleton<ProtobufDispatch> {
 public:
-    using ProtobufMessageCallback = std::function<void(zmq::socket_t&, const MessagePtr&, const int64_t&)>;
+    using ProtobufMessageCallback = std::function<void(std::shared_ptr<zmq::socket_t>, const MessagePtr&, const int64_t&, const std::string&)>;
 
-    ProtobufDispatch() :m_defaultCallback([](zmq::socket_t&, const MessagePtr& msg_, const int64_t&) {
+    ProtobufDispatch() :m_defaultCallback([](std::shared_ptr<zmq::socket_t>, const MessagePtr& msg_, const int64_t&, const std::string&) {
         LogInfo << "onUnknowMessageType: " << msg_->GetTypeName() << FlushLog;
     }) {}
 
-    void onProtobufMessage(zmq::socket_t& conn_,
+    void onProtobufMessage(std::shared_ptr<zmq::socket_t> conn_,
         const MessagePtr& message_,
-        const int64_t& receive_time_) const {
+        const int64_t& receive_time_,
+        const std::string& str_) const {
         CallbackMap::const_iterator it = m_callbacks.find(message_->GetDescriptor());
         if (it != m_callbacks.end()) {
-            it->second->onMessage(conn_, message_, receive_time_);
+            it->second->onMessage(conn_, message_, receive_time_, str_);
         }
         else {
-            m_defaultCallback(conn_, message_, receive_time_);
+            m_defaultCallback(conn_, message_, receive_time_, str_);
         }
     }
 
@@ -86,5 +89,5 @@ private:
     Singleton<ProtobufDispatch>::getInstance()->registerMessageCallback<event_>(func_);
 
 
-#define DispatcherEvent(socket_,msg_,tm_)  \
-    Singleton<ProtobufDispatch>::getInstance()->onProtobufMessage(socket_,msg_,tm_);
+#define DispatcherEvent(socket_,msg_,tm_,str_)  \
+    Singleton<ProtobufDispatch>::getInstance()->onProtobufMessage(socket_,msg_,tm_,str_);

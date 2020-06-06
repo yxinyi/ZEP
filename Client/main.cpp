@@ -2,16 +2,13 @@
 #include <stdio.h>
 #include "include/entt.hpp"
 #include "include/tool/LogInfo.h"
-#include "include/zmq/cppzmq/zmq_addon.hpp"
 #include "systems/SystemManager.h"
 #include "systems/RenderManager.h"
 #include "systems/InputManager.h"
-#include <windows.h>
-#include <iostream>
-#include "./include/proto/Ball.pb.h"
 #include "include/tool/Timer.h"
 #include "singleton/EnvironmentInfo.h"
-#include "singleton/BallManager.h"
+#include <windows.h>
+#include <iostream>
 
 
 
@@ -47,7 +44,6 @@ void MainLoop() {
                 }
                 else {
                     LogInfo << "this second fps is : " << _fps_cnt << FlushLog;
-                    LogInfo << "client ball size : " << BallMgr.size() << FlushLog;
                     _second_fps_timer.reset();
                     _fps_cnt = 1;
                 }

@@ -9,4 +9,5 @@ public:
 class VectorChange final
 {
 public:
+    bool is_change = true;
 };

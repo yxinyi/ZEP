@@ -1,50 +1,100 @@
 #include <memory>
-#include "../components/PositionComponent.h"
-#include "../components/VectorComponent.h"
-#include "../components/ObjectidComponent.h"
-#include "../entitys/BallEntity.h"
-#include "../../Common/include/zmq/cppzmq/zmq_addon.hpp"
+#include "components/PositionComponent.h"
+#include "components/VectorComponent.h"
+#include "components/ObjectidComponent.h"
+#include "components/NetConnectComponent.h"
+#include "entitys/BallEntity.h"
+#include "include/zmq/cppzmq/zmq_addon.hpp"
 #include "singleton/EnvironmentInfo.h"
-#include "singleton/ClientNetInfo.h"
-#include "singleton/ProtobufCodec.h"
+#include "singleton/NetInfo.h"
 #include "singleton/ProtobufDispatcher.h"
-#include "./include/proto/Ball.pb.h"
+#include "singleton/ProtobufCodec.h"
+#include "google/protobuf/message.h"
+
+
+
 
 using namespace google::protobuf;
 bool NetInit(entt::registry& reg_) {
-    zmq::socket_t _sock(NETINFO->m_context, zmq::socket_type::dealer);
-    _sock.connect("tcp://127.0.0.1:7000");
-    //_sock.set(zmq::sockopt::subscribe, "");
-    NETINFO->m_sub_socket.swap(_sock);
-    NETINFO->m_sub_socket.send(zmq::buffer("connect"),zmq::send_flags::dontwait);
-    LogInfo << "NetInit" << FlushLog;
     return true;
 }
-bool NetDestory(entt::registry&) {
-    NETINFO->m_sub_socket.close();
-    NETINFO->m_context.close();
+bool NetDestory(entt::registry& reg_) {
+    reg_.view<SocketCpt>().each([](auto& socket) {
+        socket.socket->close();
+    });
+    NetInfo->m_context.close();
     return true;
 }
-bool NetUpdate(const int64_t& dt_, entt::registry& reg_) {
-    zmq::message_t _recv_type_name_msg;
-    zmq::message_t _recv_msg;
-    if (NETINFO->m_sub_socket.recv(_recv_type_name_msg, zmq::recv_flags::dontwait)) {
-        if (_recv_type_name_msg.more()) {
-            if (NETINFO->m_sub_socket.recv(_recv_msg, zmq::recv_flags::dontwait)) {
-                std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv_type_name_msg.to_string(),_recv_msg.to_string()));
-                DispatcherEvent(NETINFO->m_sub_socket, _msg, dt_);
+bool NetMsgRecv(const int64_t& dt_, entt::registry& reg_) {
+    reg_.view<SocketCpt>().each([&dt_](auto& socket_) {
+        //如果作为 route 收到的消息,这个时候消息结构为   route_id protobuf_name protobuf_val
+        //如果作为 dealer 收到的消息,这个时候消息结构为  protobuf_name protobuf_val
+        //差异为 2个消息或3个消息
+        std::vector<std::string> _recv;
+        while (true) {
+            static zmq::message_t _tmp_msg;
+            if (socket_.socket->recv(_tmp_msg, zmq::recv_flags::dontwait)) {
+                _recv.push_back(_tmp_msg.to_string());
+                if (!_tmp_msg.more()) {
+                    break;
+                }
+            }
+            else {
+                break;
             }
         }
-        else {
-            LogError << "type error" << _recv_type_name_msg << FlushLog;
+
+        if (_recv.size() == 3) {
+            std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv[1], _recv[2]));
+            DispatcherEvent(socket_.socket, _msg, dt_, _recv[0]);
         }
-    }
+        else if (_recv.size() == 2) {
+            std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv[0], _recv[1]));
+            DispatcherEvent(socket_.socket, _msg, dt_, "");
+        }
+
+    });
+    return true;
+}
+
+bool NetMsgSend(const int64_t& dt_, entt::registry& reg_) {
+    
+    reg_.view<RouteIDCpt,SocketCpt, ConnectCpt>().each([](auto& route_id_,auto& socket_, auto& msg_list_) {
+        for (auto& _msg_it : msg_list_.msg_list) {
+            if (route_id_.route_id != "") {
+                zmq::send_result_t _route_id_result = socket_.socket->send(zmq::buffer(route_id_.route_id), zmq::send_flags::sndmore);
+                if (_route_id_result == -1) {
+                    zmq::error_t _err;
+                    LogInfo << "send error: " << _err.what() << FlushLog;
+                }
+            }
+            static std::string _buff;
+            _buff.clear();
+            if (_msg_it->SerializeToString(&_buff)) {
+                zmq::send_result_t _result = socket_.socket->send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
+                if (_result == -1) {
+                    zmq::error_t _err;
+                    LogInfo << "send error: " << _err.what() << FlushLog;
+                }
+                zmq::send_result_t _more_result = socket_.socket->send(zmq::buffer(_buff), zmq::send_flags::none);
+                if (_more_result == -1) {
+                    zmq::error_t _err;
+                    LogInfo << "send error: " << _err.what() << FlushLog;
+                }
+            }
+        }
+        msg_list_.msg_list.clear();
+    });
+
+
+
     return true;
 }
 
 MgrRegHelper(NetMgr) {
     SYSMGR->regInitSys(NetInit);
     SYSMGR->regDestorySys(NetDestory);
-    SYSMGR->regSys(SystemLevel::NORMAl, NetUpdate);
+    SYSMGR->regSys(SystemLevel::MSGRECV, NetMsgRecv);
+    SYSMGR->regSys(SystemLevel::MSGSEND, NetMsgSend);
 }
 

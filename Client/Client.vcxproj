@@ -155,13 +155,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\BaseEngine\singleton\ProtobufCodec.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
     <ClCompile Include="..\Common\include\proto\Shakehand.pb.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="systems\BallCreateSystem.cpp" />
-    <ClCompile Include="systems\BallRenderSystem.cpp" />
+    <ClCompile Include="systems\Ball\BallCreateSystem.cpp" />
+    <ClCompile Include="systems\Ball\BallRenderSystem.cpp" />
     <ClCompile Include="systems\MoveManager.cpp" />
+    <ClCompile Include="systems\NetConnectManager.cpp" />
     <ClCompile Include="systems\NetManager.cpp" />
     <ClCompile Include="systems\NetShakeHandManager.cpp" />
     <ClCompile Include="systems\WindowSystem.cpp" />
@@ -174,16 +174,16 @@
     <ClInclude Include="..\BaseEngine\systems\SystemManager.h" />
     <ClInclude Include="..\Common\include\proto\Ball.pb.h" />
     <ClInclude Include="..\Common\include\proto\Shakehand.pb.h" />
+    <ClInclude Include="..\Server\components\NetConnectComponent.h" />
     <ClInclude Include="components\ObjectidComponent.h" />
     <ClInclude Include="components\PositionComponent.h" />
-    <ClInclude Include="components\ShakeHandComponent.h" />
     <ClInclude Include="components\VectorComponent.h" />
     <ClInclude Include="singleton\BallManager.h" />
-    <ClInclude Include="singleton\ClientNetInfo.h" />
     <ClInclude Include="singleton\GameWindow.h" />
-    <ClInclude Include="systems\BallCreateSystem.h" />
-    <ClInclude Include="systems\BallRenderSystem.h" />
+    <ClInclude Include="systems\Ball\BallCreateSystem.h" />
+    <ClInclude Include="systems\Ball\BallRenderSystem.h" />
     <ClInclude Include="systems\MoveManager.h" />
+    <ClInclude Include="systems\NetConnectManager.h" />
     <ClInclude Include="systems\NetManager.h" />
     <ClInclude Include="systems\WindowSystem.h" />
   </ItemGroup>

@@ -10,7 +10,7 @@ bool MoveMgrInit(entt::registry& reg_) {
     return true;
 }
 bool MoveMgrUpdate(const int64_t& dt_, entt::registry& reg_) {
-    auto _view = reg_.view<BallTag,PositionComponent, VectorComponent>();
+    auto _view = reg_.view<BallTag, VectorChange,PositionComponent, VectorComponent>();
     for (auto _en_it : _view) {
         auto& _pos = _view.get<PositionComponent>(_en_it);
         auto& _vec = _view.get<VectorComponent>(_en_it);
@@ -18,15 +18,13 @@ bool MoveMgrUpdate(const int64_t& dt_, entt::registry& reg_) {
         _pos.y += static_cast<double>(_vec.y * dt_) / 1000.f;
         //LogInfo << "pos x: " << _pos.x << "pos y: " << _pos.y << FlushLog;
         if (_pos.x >= GameConfig->_windows_x || _pos.x <= 0) {
-            if (!reg_.has<VectorChange>(_en_it)) {
-                reg_.emplace<VectorChange>(_en_it);
-            }
+            auto& _change = _view.get<VectorChange>(_en_it);
+            _change.is_change = true;
             _vec.x = -_vec.x;
         }
         if (_pos.y >= GameConfig->_windows_y || _pos.y <= 0) {
-            if (!reg_.has<VectorChange>(_en_it)) {
-                reg_.emplace<VectorChange>(_en_it);
-            }
+            auto& _change = _view.get<VectorChange>(_en_it);
+            _change.is_change = true;
             _vec.y = -_vec.y;
         }
 

@@ -3,7 +3,7 @@
 #include "systems/SystemManager.h"
 #include "include/tool/ManagerInitHelper.h"
 #include "include/tool/SingletonTemplate.h"
-#include "../../Common/include/tool/LogInfo.h"
+#include "include/tool/LogInfo.h"
 
 
 class BallTag final

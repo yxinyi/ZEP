@@ -5,10 +5,18 @@
 #include "entt.hpp"
 #include "include/zmq/cppzmq/zmq_addon.hpp"
 
+
+
 class NetInfo  {
 public:
     zmq::context_t m_context;
-    zmq::socket_t m_pub_socket;
+};
+class NetConnect {
+public:
+    std::unordered_map<std::string, entt::entity> m_connect_pool;
 };
 
-#define NETINFO Singleton<NetInfo>::getInstance()
+
+#define NetInfo Singleton<NetInfo>::getInstance()
+#define NetConnect Singleton<NetConnect>::getInstance()->m_connect_pool
+

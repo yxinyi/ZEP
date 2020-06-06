@@ -154,12 +154,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\BaseEngine\components\NetConnectComponent.h" />
     <ClInclude Include="..\BaseEngine\singleton\EnvironmentInfo.h" />
     <ClInclude Include="..\BaseEngine\singleton\NetInfo.h" />
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h" />
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h" />
     <ClInclude Include="..\BaseEngine\singleton\UniqueNumberFactory.h" />
     <ClInclude Include="..\BaseEngine\systems\SystemManager.h" />
+    <ClInclude Include="..\Client\systems\NetManager.h" />
     <ClInclude Include="..\Common\include\entt.hpp" />
     <ClInclude Include="..\Common\include\proto\Ball.pb.h" />
+    <ClInclude Include="..\Common\include\proto\Shakehand.pb.h" />
     <ClInclude Include="..\Common\include\tool\LogInfo.h" />
     <ClInclude Include="..\Common\include\tool\ManagerInitHelper.h" />
     <ClInclude Include="..\Common\include\tool\SingletonTemplate.h" />
@@ -170,24 +175,25 @@
     <ClInclude Include="components\VectorComponent.h" />
     <ClInclude Include="entitys\BallEntity.h" />
     <ClInclude Include="singleton\GameConfigSingle.h" />
-    <ClInclude Include="singleton\NerConnect.h" />
     <ClInclude Include="singleton\SendBuffDispatch.h" />
     <ClInclude Include="systems\Ball\BallCreateManager.h" />
     <ClInclude Include="systems\Ball\BallMoveManager.h" />
     <ClInclude Include="systems\Ball\BallProtoBuildManager.h" />
-    <ClInclude Include="systems\NetConnectManager.h" />
-    <ClInclude Include="systems\NetManager.h" />
+    <ClInclude Include="systems\Net\NetConnectManager.h" />
+    <ClInclude Include="systems\Net\ShakehandManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\BaseEngine\singleton\UniqueNumberFactory.cpp" />
+    <ClCompile Include="..\Client\systems\NetManager.cpp" />
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc" />
+    <ClCompile Include="..\Common\include\proto\Shakehand.pb.cc" />
     <ClCompile Include="..\Common\include\tool\Time.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="systems\Ball\BallCreateManager.cpp" />
     <ClCompile Include="systems\Ball\BallMoveManager.cpp" />
     <ClCompile Include="systems\Ball\BallProtoBuildManager.cpp" />
-    <ClCompile Include="systems\NetConnectManager.cpp" />
-    <ClCompile Include="systems\NetManager.cpp" />
+    <ClCompile Include="systems\Net\NetConnectManager.cpp" />
+    <ClCompile Include="systems\Net\ShakehandManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

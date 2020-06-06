@@ -9,9 +9,11 @@ using SystemDestoryFunc = std::function<bool(entt::registry&)>;
 enum class SystemLevel
 {
     BEFORE = 0,
-    NORMAl = 1,
-    AFTER = 2,
-    MAX = 2,
+    MSGRECV = 1,
+    NORMAl = 2,
+    AFTER = 3,
+    MSGSEND = 4,
+    MAX,
 };
 
 class SystemManager {

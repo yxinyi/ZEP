@@ -1,5 +1,10 @@
 #include <memory>
 #include "WindowSystem.h"
+#include "systems/SystemManager.h"
+#include "singleton/GameWindow.h"
+#include "include/tool/LogInfo.h"
+#include "include/tool/ManagerInitHelper.h"
+#include "SDL2/SDL.h"
 
 bool WindowInit(entt::registry& reg_) {
 

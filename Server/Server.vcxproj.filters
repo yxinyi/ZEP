@@ -28,15 +28,15 @@
     <Filter Include="src\system\Ball">
       <UniqueIdentifier>{15c69a25-0bb0-44d0-bba8-530ade06569d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\system\Net">
+      <UniqueIdentifier>{b009314a-89ec-40e9-810a-15466538b4c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\include\entt.hpp">
       <Filter>entt</Filter>
     </ClInclude>
     <ClInclude Include="..\BaseEngine\systems\SystemManager.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="systems\NetManager.h">
       <Filter>src\system</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\include\tool\LogInfo.h">
@@ -81,12 +81,6 @@
     <ClInclude Include="singleton\SendBuffDispatch.h">
       <Filter>src\singleton</Filter>
     </ClInclude>
-    <ClInclude Include="systems\NetConnectManager.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="singleton\NerConnect.h">
-      <Filter>src\singleton</Filter>
-    </ClInclude>
     <ClInclude Include="systems\Ball\BallCreateManager.h">
       <Filter>src\system\Ball</Filter>
     </ClInclude>
@@ -99,11 +93,29 @@
     <ClInclude Include="..\Common\include\proto\Ball.pb.h">
       <Filter>src\system\Ball</Filter>
     </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufDispatcher.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\singleton\ProtobufCodec.h">
+      <Filter>src\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\include\proto\Shakehand.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseEngine\components\NetConnectComponent.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Client\systems\NetManager.h">
+      <Filter>src\system\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\Net\NetConnectManager.h">
+      <Filter>src\system\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\Net\ShakehandManager.h">
+      <Filter>src\system\Net</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="systems\NetManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
     <ClCompile Include="..\Common\include\tool\Time.cpp">
       <Filter>src\tool</Filter>
     </ClCompile>
@@ -111,9 +123,6 @@
       <Filter>src\singleton</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="systems\NetConnectManager.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
     <ClCompile Include="systems\Ball\BallMoveManager.cpp">
       <Filter>src\system\Ball</Filter>
     </ClCompile>
@@ -125,6 +134,18 @@
     </ClCompile>
     <ClCompile Include="..\Common\include\proto\Ball.pb.cc">
       <Filter>src\system\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\include\proto\Shakehand.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Client\systems\NetManager.cpp">
+      <Filter>src\system\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\Net\NetConnectManager.cpp">
+      <Filter>src\system\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="systems\Net\ShakehandManager.cpp">
+      <Filter>src\system\Net</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

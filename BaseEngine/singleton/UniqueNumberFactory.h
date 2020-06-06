@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <iostream>
-#include "../../Common/include/tool/SingletonTemplate.h"
+#include "include/tool/SingletonTemplate.h"
 #include "entt.hpp"
 #include "include/zmq/cppzmq/zmq_addon.hpp"
 
