@@ -23,6 +23,8 @@ bool NetDestory(entt::registry& reg_) {
         socket.socket->close();
     });
     NetInfo->m_context.close();
+    zmq::socket_t _socket;
+    
     return true;
 }
 bool NetMsgRecv(const int64_t& dt_, entt::registry& reg_) {
@@ -46,11 +48,16 @@ bool NetMsgRecv(const int64_t& dt_, entt::registry& reg_) {
 
         if (_recv.size() == 3) {
             std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv[1], _recv[2]));
-            DispatcherEvent(socket_.socket, _msg, dt_, _recv[0]);
+            if (_msg.get()) {
+                DispatcherEvent(socket_.socket, _msg, dt_, _recv[0]);
+            }
+
         }
         else if (_recv.size() == 2) {
             std::shared_ptr<Message> _msg(ProtoCodec->decode(_recv[0], _recv[1]));
-            DispatcherEvent(socket_.socket, _msg, dt_, "");
+            if (_msg.get()) {
+                DispatcherEvent(socket_.socket, _msg, dt_, _recv[0]);
+            }
         }
 
     });
@@ -58,11 +65,14 @@ bool NetMsgRecv(const int64_t& dt_, entt::registry& reg_) {
 }
 
 bool NetMsgSend(const int64_t& dt_, entt::registry& reg_) {
-    
-    reg_.view<RouteIDCpt,SocketCpt, ConnectCpt>().each([](auto& route_id_,auto& socket_, auto& msg_list_) {
-        for (auto& _msg_it : msg_list_.msg_list) {
-            if (route_id_.route_id != "") {
-                zmq::send_result_t _route_id_result = socket_.socket->send(zmq::buffer(route_id_.route_id), zmq::send_flags::sndmore);
+    auto _view = reg_.view<RouteIDCpt, SocketCpt, ConnectCpt, SendSocket>();
+    for(auto _entity_it : _view) {
+        auto& _msg_list = _view.get<ConnectCpt>(_entity_it);
+        auto& _route_id = _view.get<RouteIDCpt>(_entity_it);
+        auto& _socket = _view.get<SocketCpt>(_entity_it);
+        for (auto& _msg_it : _msg_list.msg_list) {
+            if (_route_id.route_id != "") {
+                zmq::send_result_t _route_id_result = _socket.socket->send(zmq::buffer(_route_id.route_id), zmq::send_flags::sndmore);
                 if (_route_id_result == -1) {
                     zmq::error_t _err;
                     LogInfo << "send error: " << _err.what() << FlushLog;
@@ -71,20 +81,46 @@ bool NetMsgSend(const int64_t& dt_, entt::registry& reg_) {
             static std::string _buff;
             _buff.clear();
             if (_msg_it->SerializeToString(&_buff)) {
-                zmq::send_result_t _result = socket_.socket->send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
+                zmq::send_result_t _result = _socket.socket->send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
                 if (_result == -1) {
                     zmq::error_t _err;
                     LogInfo << "send error: " << _err.what() << FlushLog;
                 }
-                zmq::send_result_t _more_result = socket_.socket->send(zmq::buffer(_buff), zmq::send_flags::none);
+                zmq::send_result_t _more_result = _socket.socket->send(zmq::buffer(_buff), zmq::send_flags::none);
                 if (_more_result == -1) {
                     zmq::error_t _err;
                     LogInfo << "send error: " << _err.what() << FlushLog;
                 }
             }
         }
-        msg_list_.msg_list.clear();
-    });
+        _msg_list.msg_list.clear();
+    }
+    //reg_.view<RouteIDCpt,SocketCpt, ConnectCpt, OtherSocket>().each([](auto& route_id_,auto& socket_, auto& msg_list_, auto& other_socket_) {
+    //    for (auto& _msg_it : msg_list_.msg_list) {
+    //        if (route_id_.route_id != "") {
+    //            zmq::send_result_t _route_id_result = socket_.socket->send(zmq::buffer(route_id_.route_id), zmq::send_flags::sndmore);
+    //            if (_route_id_result == -1) {
+    //                zmq::error_t _err;
+    //                LogInfo << "send error: " << _err.what() << FlushLog;
+    //            }
+    //        }
+    //        static std::string _buff;
+    //        _buff.clear();
+    //        if (_msg_it->SerializeToString(&_buff)) {
+    //            zmq::send_result_t _result = socket_.socket->send(zmq::buffer(_msg_it->GetTypeName()), zmq::send_flags::sndmore);
+    //            if (_result == -1) {
+    //                zmq::error_t _err;
+    //                LogInfo << "send error: " << _err.what() << FlushLog;
+    //            }
+    //            zmq::send_result_t _more_result = socket_.socket->send(zmq::buffer(_buff), zmq::send_flags::none);
+    //            if (_more_result == -1) {
+    //                zmq::error_t _err;
+    //                LogInfo << "send error: " << _err.what() << FlushLog;
+    //            }
+    //        }
+    //    }
+    //    msg_list_.msg_list.clear();
+    //});
 
 
 

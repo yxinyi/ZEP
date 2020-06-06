@@ -13,6 +13,14 @@ public:
     std::shared_ptr<zmq::socket_t> socket;
 };
 
+class RecvSocket {
+public:
+};
+
+class SendSocket {
+public:
+};
+
 class NewConnectCpt {
 public:
 };

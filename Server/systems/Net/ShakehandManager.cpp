@@ -19,6 +19,7 @@ bool ShakehandManagerInit(entt::registry& reg_) {
 
         const uint32_t _state = message_->state();
 
+        LogInfo << "EventRegister: ShakeHandEvent" << FlushLog;
         //第一次连接
         if (_state == 1) {
             if (NetConnect.find(route_id_) != NetConnect.end()) {
@@ -30,6 +31,7 @@ bool ShakehandManagerInit(entt::registry& reg_) {
             reg_.emplace<ConnectCpt>(_entity);
             reg_.emplace<ShakeHandTmCpt>(_entity, static_cast<uint32_t>(Time::getInstance()->Now()));
             reg_.emplace<RouteIDCpt>(_entity, route_id_);
+            reg_.emplace<SendSocket>(_entity);
 
             NetConnect[route_id_] = _entity;
         }
